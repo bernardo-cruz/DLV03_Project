@@ -32,3 +32,5 @@ This repository can also be downloaded and used via Docker.
 - [Data Augmentation](https://towardsdatascience.com/complete-guide-to-data-augmentation-for-computer-vision-1abe4063ad07)
 - [CNN](https://towardsdatascience.com/a-conceptual-explanation-of-convolutional-neural-networks-cnns-ccd2e62f213b)
 - [CNN ELI5](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) 
+- [Time Series Analysis](https://towardsdatascience.com/time-series-forecasting-with-deep-learning-and-attention-mechanism-2d001fc871fc)
+
