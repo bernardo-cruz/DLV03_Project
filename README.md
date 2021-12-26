@@ -5,17 +5,6 @@
 The aim of this repository is to create a bucket for all activities around semester project. 
 The [report](./data/report.md) is a living-document and is subject to change.
 
-## Automatic detection and description of the performance of financial instruments 
-The information will be extracted from graphs of factsheets, of by own creation. The captions shall describe the movements etc. of a title. 
-![Automatic analysis of graphs and description](data/img/ishares_smi.png)  
-__Dataset - scrapping Google / Yahoo Finance API__  
-[Image Captioning](https://towardsdatascience.com/a-guide-to-image-captioning-e9fd5517f350)
-
-The aim is to achieve the following:
-- Identify time axis values and monetary values.
-- Identify the performance of financial title.
-- Describe the performance of financial title with typical values such as the average, the standard deviation, the minimum and the maximum, correlation, covariance etc. 
-
 ## Models
 - **VGG**  
   The runner-up in ILSVRC 2014 was the network from Karen Simonyan and Andrew Zisserman that became known as the VGGNet. Its main contri- bution was in showing that the depth of the network is a critical component for good performance. Their final best network contains 16 CONV/FC layers and, appealingly, features an extremely homogeneous architecture that only per- forms 3 × 3 convolutions and 2 × 2 pooling from the beginning to the end. Their pretrained model is available for plug and play use in Caffe. A downside of the VGGNet is that it is more expensive to evaluate and uses a lot more memory and parameters (140M). Most of these parameters are in the first fully connected layer, and it was since found that these FC layers can be removed with no perfor- mance downgrade, significantly reducing the number of necessary parameters.  
@@ -28,6 +17,7 @@ The [requirements.txt](./requirement.txt) describes the needed installation on y
 This repository can also be downloaded and used via Docker. 
 
 # Important Links
+- [Dataset: Traffic Sign](https://www.kaggle.com/ahemateja19bec1025/traffic-sign-dataset-classification)
 - [Learning Rate Finder](https://medium.com/analytics-vidhya/the-learning-rate-finder-9203fdc67c92)  
 - [Data Augmentation](https://towardsdatascience.com/complete-guide-to-data-augmentation-for-computer-vision-1abe4063ad07)
 - [CNN](https://towardsdatascience.com/a-conceptual-explanation-of-convolutional-neural-networks-cnns-ccd2e62f213b)
