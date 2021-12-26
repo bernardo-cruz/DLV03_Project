@@ -9,7 +9,7 @@ The [report](./data/report.md) is a living-document and is subject to change.
 - **VGG**  
   The runner-up in ILSVRC 2014 was the network from Karen Simonyan and Andrew Zisserman that became known as the VGGNet. Its main contri- bution was in showing that the depth of the network is a critical component for good performance. Their final best network contains 16 CONV/FC layers and, appealingly, features an extremely homogeneous architecture that only per- forms 3 × 3 convolutions and 2 × 2 pooling from the beginning to the end. Their pretrained model is available for plug and play use in Caffe. A downside of the VGGNet is that it is more expensive to evaluate and uses a lot more memory and parameters (140M). Most of these parameters are in the first fully connected layer, and it was since found that these FC layers can be removed with no perfor- mance downgrade, significantly reducing the number of necessary parameters.  
 
-- **ResNet**
+- **ResNet**  
   Residual Network developed by Kaiming He et al. was the winner of ILSVRC 2015. It features special skip connections and a heavy use of batch nor- malization. The architecture is also missing fully connected layers at the end of the network. The reader is also referred to Kaiming’s presentation (video, slides), and some recent experiments that reproduce these networks in Torch. ResNets are currently by far state of the art Convolutional Neural Network models and are the default choice for using ConvNets in practice (as of May 10, 2016). In particular, also see more recent developments that tweak the orig- inal architecture from Kaiming He et al. Identity Mappings in Deep Residual Networks (published March 2016).  
 
 # Technical Information
