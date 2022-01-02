@@ -5,6 +5,19 @@
 The aim of this repository is to create a bucket for all activities around semester project. 
 The [report](./data/report.md) is a living-document and is subject to change.
 
+## Traffic Sign Detection
+[Kaggle Traffic Sign Detection Dataset](https://www.kaggle.com/ahemateja19bec1025/traffic-sign-dataset-classification)
+
+## Work Packages:
+The main script (main.py) calls the following scripts: 
+
+- Image-Prepocess script: -> __image_process.py__
+- CNN: own CNN architecture, transferlearning -> __cnn.py__
+- Text classification: -> __text_classification.py__
+- Object Detection script: -> __object_detection.py__
+- Image Captioning script:  -> __image_captioning.py__
+- Investigation Performance script: -> __performance_investigation.py__
+
 ## Models
 - **VGG**  
   The runner-up in ILSVRC 2014 was the network from Karen Simonyan and Andrew Zisserman that became known as the VGGNet. Its main contri- bution was in showing that the depth of the network is a critical component for good performance. Their final best network contains 16 CONV/FC layers and, appealingly, features an extremely homogeneous architecture that only per- forms 3 × 3 convolutions and 2 × 2 pooling from the beginning to the end. Their pretrained model is available for plug and play use in Caffe. A downside of the VGGNet is that it is more expensive to evaluate and uses a lot more memory and parameters (140M). Most of these parameters are in the first fully connected layer, and it was since found that these FC layers can be removed with no perfor- mance downgrade, significantly reducing the number of necessary parameters.  
