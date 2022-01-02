@@ -11,12 +11,12 @@ The [report](./data/report.md) is a living-document and is subject to change.
 ## Work Packages:
 The main script (main.py) calls the following scripts: 
 
-- Image-Prepocess script: -> __image_process.py__
-- CNN: own CNN architecture, transferlearning -> __cnn.py__
-- Text classification: -> __text_classification.py__
-- Object Detection script: -> __object_detection.py__
-- Image Captioning script:  -> __image_captioning.py__
-- Investigation Performance script: -> __performance_investigation.py__
+- X Image-Prepocess script: -> __image_process.py__ ()
+- CNN: own CNN architecture, transferlearning -> __cnn.py__ ()
+- (X)Text classification: -> __text_classification.py__ ()
+- Object Detection script: -> __object_detection.py__ ()
+- Image Captioning script:  -> __image_captioning.py__ ()
+- (X) Investigation Performance script: -> __performance_investigation.py__ ()
 
 ## Models
 - **VGG**  
