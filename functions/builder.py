@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 class Functionbuilder:
     """ This class creates dummy data and plot for later use in the CNN
     """
-    def __init__(self, x_start:int, x_end:int, num:int=1000):
+    def __init__(self, x_start:int, x_end:int, num:int=100):
         """[summary]
 
         Args:
@@ -35,7 +35,7 @@ class Functionbuilder:
             )
     
     # Create a linear function
-    def linear(self, m=1,c=0):
+    def linear(self, m=1,c=0, scale = None):
         """ This method creates a linear function with slope m and intercept c.
 
         Args:
@@ -59,7 +59,7 @@ class Functionbuilder:
         return self.y
     
     # Create a quadratic function
-    def poly(self, coefficients:list=[0,0,1]):
+    def polynomial(self, coefficients:list=[0,0,0.01]):
         """This method creates a quadratic function with coefficients.
 
         Args:
@@ -73,7 +73,7 @@ class Functionbuilder:
         Returns:
             [array]:[float values]
         """
-        self.type = 'poly'
+        self.type = f'polynomial {len(coefficients)}'
         self.y = 0
         if coefficients:
             for i,c in enumerate(coefficients):
@@ -86,7 +86,7 @@ class Functionbuilder:
         return self.y
 
     # Create a exponential function
-    def exponential(self, a=1, b=0.1, c=0):
+    def exponential(self, a = 1, b = 0.05, c = 0):
         """This method creates an exponential function with coefficients. The function is:
                 a * exp(b * x) + c
 
@@ -108,43 +108,53 @@ class Functionbuilder:
         return self.y
     
     # Create a sinus function
-    def sinus(self, a=1, b=0.1, c=0):
+    def sinus(self, a = 25, f = 0.5, o = 50):
         """This method creates a sinus function with coefficients. The function is:
                 a * sin(b * x) + c
 
         Args:
             a (int, optional): Defaults to 1.
-            b (int, optional): Defaults to 1.
-            c (int, optional): Defaults to 0.
+            f (int, optional): Defaults to 1.
+            o (int, optional): Defaults to 0.
 
         Returns:
             float: Vector of y values.
         """
         self.type = 'sinus'
         self.a = a
-        self.b = b
-        self.c = c
-        self.y = self.a * np.sin(self.b * self.x) + self.c
+        self.f = f
+        self.o = o
+        self.y = self.a * np.sin(self.f * self.x) + self.o
         self.y_start = np.min(self.y)
         self.y_end = np.max(self.y)
         return self.y
     
+        # Adding Noise
+    
     @property
-    def plot(self, width=10, height=10):
-        #print('x is equal to:\n',self.x)
-        #print('y is equal to:\n',self.y)
+    def noise(self):
+        pass
+
+    # Plot the function
+    def plot(self, width = 10, height = 10):
         plt.rcParams["figure.figsize"] = (width,height)       
-        plt.rcParams["lines.linewidth"] = 5
-        plt.rcParams["axes.linewidth"] = 0
-        plt.rcParams['axes.labelcolor'] = 'white'
+        plt.rcParams["lines.linewidth"] = 2
+        plt.rcParams["axes.linewidth"] = 0.5
+        plt.rcParams["axes.linewidth"] = 0.5
         plt.show()
-        plt.title(f'{self.type} function'.title())
-        plt.axis('off')
+        plt.figure()
+        plt.xlim([self.x_start, self.x_end])
+        #plt.ylim([self.x_start, self.x_end])
+        plt.xticks([])
+        plt.yticks([])
+        plt.title(f'{self.type} function'.title()) # Add coefficients to title?????
+        #plt.axis('off')
         return plt.plot(
             self.x,
             self.y,
             )
 
+    # string representation of the object
     def __str__(self):
         return f"""
         | Functionbuilder object: Type {self.type} |
@@ -152,26 +162,41 @@ class Functionbuilder:
         | y_start: {self.y_start} | y_end: {self.y_end} |
         """
 
+    # repr of the object
     def __repr__(self):
         return self.__str__()
 
 
+def coefficient_generator(mu = 1, sigma = None):
+    if sigma == None:
+        sigma = mu / 2    
+    return sigma * np.random.randn() + mu
+
 # %%
 
-lin = Functionbuilder(x_start = 0, x_end = 100, num = 1000)
-lin.linear()
-lin.plot
+def test():
+    x_start = 0
+    x_end = 100
+    num = 1000
 
-quad = Functionbuilder(x_start = 0, x_end = 100, num = 1000)
-quad.poly()#[1,0,1])
-quad.plot
+    # Initialize the functionbuilder object
+    function = Functionbuilder(x_start = x_start, x_end = x_end, num = num)
 
-exp = Functionbuilder(x_start = 0, x_end = 100, num = 1000)
-exp.exponential(a = 1,b = 0.1,c = 0)
-exp.plot
+    # 
+    function.linear(m = coefficient_generator(), c = coefficient_generator())
+    function.plot()
 
-sin = Functionbuilder(x_start = 0, x_end = 100, num = 1000)
-sin.sinus(a = 1,b = 0.1,c = 0)
-sin.plot
+    # 
+    function.polynomial()#[1,0,1])
+    function.plot()
 
+    # 
+    function.exponential(a = 1, b = 0.05, c = 0)
+    function.plot()
+
+    # 
+    function.sinus(a = 25, f = 0.09, o = 50)
+    function.plot()
+
+test()
 # %%
